@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="À propos | Ményssa Cherifa-Luron" description="À propos Ményssa Cherifa-Luron Data Scientist Portfolio">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="À propos"
+				tagline="Découvrez ci-dessous mon parcours et mon expérience."
+			>
+				<img
+					width="700"
+					height="400"
+					src="/assets/at-work.jpg"
+					alt="Ményssa Cherifa-Luron au travail"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Parcours</h2>
+				<div class="content">
+					<p>
+						Titulaire d'un doctorat en Data Science, j'ai accumulé 8 ans d'expérience dans divers secteurs, 
+						allant des start-ups aux ONG en passant par les grands groupes. Cette diversité m'a permis de développer 
+						une approche polyvalente et stratégique de la data science, adaptable à différents contextes et défis.
+					</p>
+					<br>
+					<p>
+						Je crois fermement au pouvoir de la data pour éclairer les décisions et inspirer l'innovation. 
+						Mon approche combine rigueur analytique et créativité, transformant des données complexes en narratifs 
+						accessibles et impactants. 
+					</p>
+					<br>
+					<p>
+						C'est cette passion pour le partage de connaissances qui m'a conduite à devenir 
+						formatrice et autrice, cherchant toujours à rendre la data science plus accessible et engageante.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Diplômes</h2>
+				<div class="content">
+					<p> 2015 - Licence Biologie & Informatique </p>
+					<p> 2017 - Master Biostatistiques et Epidémiologie </p>
+					<p> 2021 - Doctorat en Data Science </p>
+
+
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p><strong>Langages &amp; Frameworks</strong></p>
+						<ul>
+							<li><strong>R :</strong> Tidyverse, SparkR, RShiny, Rmarkdown</li>
+							<li><strong>Python :</strong> Scikit-learn, TensorFlow, PyTorch, Selenium, Beautiful Soup</li>
+							<li><strong>Web :</strong> R Shiny, Quarto, Streamlit, HTML, CSS</li>
+							<li><strong>Versioning :</strong> Git</li>
+							<li><strong>BDD :</strong> PostgreSQL, Azure Blob, AWS RDS</li>
+							<li><strong>MLOps :</strong> MLFlow, Docker, Github Actions, CI/CD</li>
+						</ul>
+					<p><strong>Compétences Transversales</strong></p>
+						<ul>
+							<li>Recherche, enseignement, consultation</li>
+							<li><strong>Rédaction :</strong> LaTeX, publications scientifiques, blogging</li>
+							<li><strong>Marketing digital :</strong> SEO, WordPress, copywriting, conception web, marketing d'affiliation</li>
+							<li><strong>Productivité :</strong> Notion, Google Suite</li>
+						</ul>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
